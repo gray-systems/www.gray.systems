@@ -1,0 +1,25 @@
+@* login Template File *@
+@(userForm: Form[systems.gray.www.forms.User])
+@import helper._
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Gray Systems Login</title>
+    </head>
+    <body>
+    @helper.form(systems.gray.www.controllers.routes.HomeController.authenticate) {
+    <h1>Sign in</h1>
+	<p>
+	    @inputText(userForm("username"))
+	</p>
+	<p>
+	    @inputText(userForm("password"))
+	</p>
+	<p>
+        <button type="submit">Login</button>
+    </p>
+    }
+    </body>
+</html>
